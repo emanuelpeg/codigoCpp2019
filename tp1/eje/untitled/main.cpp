@@ -7,9 +7,49 @@ using namespace std;
 //El entorno de desarrollo, proceso de compilación, ejecución y debugging.
 //Problemas para revisión de lógica de control. Parte 1.
 
+
+//---------------- eje 1 --------------
 int divisionEntera(int numerador, int denominador, int &resto) {
     resto = numerador % denominador;
     return numerador / denominador;
+}
+
+// Factorial de n
+int facto(int n) {
+    return (n == 0) ? 1 : n * facto(n - 1);
+}
+
+// Intercambia el valor de 2 variables
+int intercambiar(char &a, char &b) {
+    char aux = a;
+    a = b;
+    b = aux;
+}
+
+int intercambiar(int &a, int &b) {
+    int aux = a;
+    a = b;
+    b = aux;
+}
+
+int intercambiar(float a[], float b[]) {
+    float * aux = a;
+    a = b;
+    b = aux;
+}
+
+//------------------ Eje 2
+double calcularIva(double monto) {
+    return monto * 0,13;
+}
+
+double calcularMontoTotal(double monto) {
+    monto = monto + calcularIva(monto);
+    double descuento = 0;
+    if (monto > 50) {
+        descuento = monto * 0.05;
+    }
+    return monto - descuento;
 }
 
 // h=sqrt((x^2)+(y^2))
@@ -30,8 +70,6 @@ int mcd(int a, int b) {
     }
 }
 
-
-
 int main(int argc, char *argv[])
 {
     int numerador = 5;
@@ -45,10 +83,24 @@ int main(int argc, char *argv[])
     cout << "resto : " << resto << endl;
     cout << "resultado : " << resultado << endl;
 
-    double a = 2 / 3;
+    cout << facto(5);
 
+    char a = 'A';
+    char b = 'B';
+    intercambiar(a,b);
     cout << a;
+    cout << b << endl;
+    cout << calcularMontoTotal(40.5);
 
+    float * aa = new float[5];
+    float * ba = new float[5];
+    ba[0] = 999;
+    aa[0] = 0;
+    aa[1] = 1;
+
+    intercambiar(aa, ba);
+    cout<< ba[0]<< endl;
+    cout<< ba[1]<< endl;
     return 0;
 }
 
