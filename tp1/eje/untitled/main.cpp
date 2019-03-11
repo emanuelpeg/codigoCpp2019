@@ -32,10 +32,17 @@ int intercambiar(int &a, int &b) {
     b = aux;
 }
 
-int intercambiar(float a[], float b[]) {
-    float * aux = a;
-    a = b;
-    b = aux;
+int intercambiar(float a[], float b[], int count) {
+    float * aux = new float(count);
+    for (int i = 0; i<count; i++) {
+        aux[i] = a[i];
+    }
+    for (int i = 0; i<count; i++) {
+        a[i] = b[i];
+    }
+    for (int i = 0; i<count; i++) {
+        b[i] = aux[i];
+    }
 }
 
 //------------------ Eje 2
@@ -90,7 +97,7 @@ int main(int argc, char *argv[])
     intercambiar(a,b);
     cout << a;
     cout << b << endl;
-    cout << calcularMontoTotal(40.5);
+    cout << calcularMontoTotal(40.5)<< endl;
 
     float * aa = new float[5];
     float * ba = new float[5];
@@ -98,7 +105,7 @@ int main(int argc, char *argv[])
     aa[0] = 0;
     aa[1] = 1;
 
-    intercambiar(aa, ba);
+    intercambiar(aa, ba, 5);
     cout<< ba[0]<< endl;
     cout<< ba[1]<< endl;
     return 0;
