@@ -109,6 +109,21 @@ int trianguloDePascal(int fila, int columna) {
     }
 }
 
+void trasponerAux(int * vector, int indice, int cantidad) {
+    if (indice == cantidad / 2) {
+        return;
+    } else {
+        int aux = vector[indice];
+        vector[indice] = vector[(cantidad - 1) - indice];
+        vector[(cantidad - 1) - indice] = aux;
+        trasponerAux(vector, indice + 1, cantidad);
+    }
+}
+
+void trasponer(int * vector, int cantidad) {
+    trasponerAux(vector, 0 , cantidad);
+}
+
 int main(int argc, char *argv[])
 {
     int vector[] = { 4, 10, 12, 5, 6, 7, 8, 11, 2, 3 };
@@ -117,6 +132,19 @@ int main(int argc, char *argv[])
     cout << endl << "Vector Ordenado :";
     for (int i = 0; i < 10; i++) {
         cout << vector[i] << " ";
+    }
+
+    trasponer(vector, 10);
+    cout << endl << "Vector Ordenado alrreves :";
+    for (int i = 0; i < 10; i++) {
+        cout << vector[i] << " ";
+    }
+
+    int vector2[] = { 4, 10, 12, 5, 6, 7, 11, 2, 3 };
+    trasponer(vector2, 9);
+    cout << endl << "Vector Ordenado alrreves :";
+    for (int i = 0; i < 9; i++) {
+        cout << vector2[i] << " ";
     }
 
     cout << endl << "mayor :" << mayor(vector, 10) << endl;
