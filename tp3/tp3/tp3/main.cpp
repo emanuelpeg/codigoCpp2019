@@ -114,8 +114,40 @@ char * eliminarAll(char * palabra, char otro) {
     return palabra;
 }
 
+char * subString(char * palabra, int index) {
+    int cantidad = count(palabra);
+    if (cantidad > index) {
+        char * sub = new char[cantidad - index];
+        for (int i = index; i < cantidad; i++) {
+            sub[i - index] = palabra[i];
+        }
+        return sub;
+    }
+    return 0;
+}
 
+char * subString(char * palabra, int inicio, int final) {
+    int cantidad = count(palabra);
+    if (cantidad > final && final > inicio) {
+        char * sub = new char[final - inicio + 1];
+        for (int i = inicio; i < final; i++) {
+            sub[i - inicio] = palabra[i];
+        }
+        sub[final - inicio] = '\0';
+        return sub;
+    }
+    return 0;
+}
 
+char * reverso(char * palabra) {
+    int cantidad = count(palabra);
+    char * rev = new char[cantidad];
+    for (int i = 0; i < cantidad -1; i++) {
+        rev[cantidad - (i+2)] = palabra[i];
+    }
+    rev[cantidad - 1] = palabra[cantidad - 1];
+    return rev;
+}
 
 int main(int argc, char *argv[])
 {
@@ -127,5 +159,9 @@ int main(int argc, char *argv[])
     cout << eliminar(palabra, '!') << endl;
     cout << eliminar(palabra, 'e') << endl;
     cout << eliminarAll(palabra2, 'A') << endl;
+    cout << subString(palabra, 6) << endl;
+    cout << subString(palabra, 6, 11) << endl;
+    cout << subString(palabra, 0, 5) << endl;
+    cout << reverso(palabra) << endl;
     return 0;
 }
