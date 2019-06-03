@@ -17,16 +17,13 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_toolButton_clicked();
 
-    void on_toolButton_2_clicked();
-
-    void on_toolButton_3_clicked();
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     Juego juego;
-    void verificar(int i);
+    void cargarLabels();
 };
 
 #endif // MAINWINDOW_H
