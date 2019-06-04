@@ -17,7 +17,25 @@ void Juego::barajar(){
  *  0 = piedra -> gana 2 tijera, pierde 1 papel
  */
 int Juego::verificar(int eleUsuario) {
-     return abs(this->ele - eleUsuario);
+    if((ele == 0) && (eleUsuario== 1)) {
+        return 2;
+    }
+    if((ele == 0) && (eleUsuario== 2)) {
+        return 1;
+    }
+    if((ele == 1) && (eleUsuario== 0)) {
+        return 1;
+    }
+    if((ele == 1) && (eleUsuario== 2)) {
+        return 2;
+    }
+    if((ele == 2) && (eleUsuario== 0)) {
+        return 2;
+    }
+    if((ele == 2) && (eleUsuario== 1)) {
+        return 1;
+    }
+    return 0;
 }
 
 int Juego::getEle() {
