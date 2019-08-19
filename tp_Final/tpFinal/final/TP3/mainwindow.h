@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QLabel>
-#include "juego.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,14 +19,9 @@ public:
 private:
     QLabel *** labels;
     Ui::MainWindow *ui;
-    Juego *game;
-    int dim, cast;
-
-private slots:
-    void dibujarArtefacto();
-    void checkArtefactos();
-    void actualizar();
-    void endOfGame();
+    unsigned long dim;
+    void inicializarMatriz();
+    int getValorMatriz(int i, int j);
 
 public slots:
     void keyPressEvent(QKeyEvent * e);
