@@ -29,7 +29,7 @@ int main()
 
     cout << " --------------- " << endl;
 
-    std::sort(numeros.begin(),numeros.end(), des);
+    std::sort(numeros.rbegin(),numeros.rend());
 
     for(int i = 0; i<numeros.size(); i++) {
         cout << numeros[i]  << ", ";

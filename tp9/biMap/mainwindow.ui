@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>398</width>
-    <height>182</height>
+    <height>278</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -56,6 +56,13 @@
      <widget class="QLabel" name="label_3">
       <property name="text">
        <string>Resultado</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="text">
+       <string>Buscar Por Valor</string>
       </property>
      </widget>
     </item>

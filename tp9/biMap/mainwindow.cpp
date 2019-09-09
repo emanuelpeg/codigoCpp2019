@@ -23,3 +23,8 @@ void MainWindow::on_pushButton_2_clicked()
 {
     this->ui->label_3->setText(QString::number(this->bimap.key(this->ui->lineEdit_2->text())));
 }
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    this->ui->label_3->setText(this->bimap.value(this->ui->spinBox->value()));
+}

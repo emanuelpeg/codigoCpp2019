@@ -9,11 +9,12 @@ Map<K,V>::Map()
 template <class K, class V>
 void Map<K,V>::put(K key, V value){
     K * auxKey = new K (count + 1);
-    K * auxValue = new V (count + 1);
+    V * auxValue = new V (count + 1);
     for(int i = 0; i < count; i++){
         auxKey[i]= this->keys[i];
         auxValue[i] = this->values[i];
     }
+
     auxKey[count] = key;
     auxValue[count] = value;
 

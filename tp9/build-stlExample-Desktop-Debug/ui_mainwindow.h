@@ -38,13 +38,14 @@ public:
     QLineEdit *lineEdit_2;
     QPushButton *pushButton_2;
     QLabel *label_3;
+    QPushButton *pushButton_3;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(398, 182);
+        MainWindow->resize(398, 278);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         formLayout = new QFormLayout(centralWidget);
@@ -91,6 +92,11 @@ public:
 
         formLayout->setWidget(4, QFormLayout::LabelRole, label_3);
 
+        pushButton_3 = new QPushButton(centralWidget);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+
+        formLayout->setWidget(4, QFormLayout::FieldRole, pushButton_3);
+
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -109,6 +115,7 @@ public:
         pushButton->setText(QApplication::translate("MainWindow", "Agregar", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("MainWindow", "Buscar", Q_NULLPTR));
         label_3->setText(QApplication::translate("MainWindow", "Resultado", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("MainWindow", "Buscar Por Valor", Q_NULLPTR));
     } // retranslateUi
 
 };
